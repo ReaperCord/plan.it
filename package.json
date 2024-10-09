@@ -1,0 +1,21 @@
+{
+  "name": "textando-gambiarras",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:crud": "npx ts-node ./core/crud.ts",
+    "dev:crud": "nodemon --ext ts,tsx. --exec npm run start:crud",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Projeto criando um CRUD com qualidade",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "@types/node": "^22.7.5",
+    "typescript": "^5.6.3"
+  }
+}
