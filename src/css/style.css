@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* mudanças globais */
+* {
+    font-family: 'Ralaway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* mudanças de corpo */
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #0A1626;
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+
+hr {
+    border-width: 0;
+    height: 2px;
+    background-color: #0a16262a;
+    border-radius: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* mudanças ids */
+    /* form */
+#to_do {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: #C2D2F2;
+    padding: 16px;
+    border-radius: 8px;
+    width: 430px;
+}
+
+#to_do h1 {
+    color: #0A1626;
+    font-size: 28px;
+}
+
+
+    /* tasks */
+
+#tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 400px;
+    overflow: auto;
+}
+
+/* mudanças classes */
+
+    /* form */
+.to-do-form {
+    display: flex;
+    width: 100%;
+}
+
+.to-do-form input {
+    background-color: transparent;
+    border: none;
+    color: #0A1626;
+    font-size: 16px;
+    padding: 4px;
+    width: 100%;
+    border-bottom: 2px solid #0A1626;
+}
+
+.to-do-form input:focus-visible {
+    outline: none;
+}
+
+.to-do-form .form-button {
+    border: none;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    transition: scale 0.5s ease;
+}
+
+.to-do-form .form-button:hover {
+    cursor: pointer;
+    scale: 1.05;
+}
+
+/* tasks */
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #0A1626;
+    background-color: #b4c6eb;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.task .progress {
+    margin-right: 10px;
+}
+
+.task .progress.done + .task-description {
+    text-decoration: line-through;
+    color: #0a162660;
+
+}
+
+.task .task-description {
+    font-size: 16px;
+    color: #0A1626;
+    padding: 4px 0;
+    width: 100%;
+}
+
+.task .task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-buton {
+    font-size: 16px;
+}
+
+.action-button.edit-button {
+    color: #0A1626;
+}
+
+.action-button.delete-button {
+    color: #ec154b;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+    #to_do {
+        width: 300px;
+        border: 20px;
+    }
+}
