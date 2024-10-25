@@ -16,35 +16,30 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #0A1626;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
     background-size: cover;
     background-repeat:no-repeat;
 }
 
-hr {
-    border-width: 0;
-    height: 2px;
-    background-color: #0a16262a;
-    border-radius: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
 
 /* mudanças ids */
     /* form */
 #to_do {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 25px;
-    background-color: #C2D2F2;
-    padding: 16px;
+    background-color:#0A1626;
     border-radius: 8px;
-    width: 430px;
+    margin: 16px;
+    width: 95vh;
+    box-shadow: 0px 4px 58px -16px rgba(0,0,0,0.75);
 }
 
 #to_do h1 {
     color: #0A1626;
     font-size: 28px;
+    margin-top: 24px;
+    margin-bottom: 50px;
 }
 
 
@@ -53,9 +48,26 @@ hr {
 #tasks {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 16px;
-    max-height: 400px;
-    overflow: auto;
+    width: 90%;
+    padding: 16px;
+    max-height: auto;
+    overflow:auto;
+}
+
+#to-do-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:flex-start;
+    gap: 16px;
+    width: 100%;
+    background-color: #ec154b;
+    padding: 16px;
+    margin-right: -25px;
+    border-radius: 8px 0px 0px 8px;
 }
 
 /* mudanças classes */
@@ -69,15 +81,21 @@ hr {
 .to-do-form input {
     background-color: transparent;
     border: none;
-    color: #0A1626;
+    color: #ffffff;
     font-size: 16px;
     padding: 4px;
     width: 100%;
-    border-bottom: 2px solid #0A1626;
+    border-bottom: 1px solid #0A1626;
+    
 }
 
 .to-do-form input:focus-visible {
     outline: none;
+}
+
+.to-do-form input::placeholder {
+    color: #ffffff;
+    opacity: 0.5;
 }
 
 .to-do-form .form-button {
@@ -87,6 +105,8 @@ hr {
     border-radius: 100%;
     font-size: 20px;
     transition: scale 0.5s ease;
+    color: #ec154b;
+    background-color: #0A1626;
 }
 
 .to-do-form .form-button:hover {
@@ -94,13 +114,22 @@ hr {
     scale: 1.05;
 }
 
+.reciver {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+}
+
 /* tasks */
 .task {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    color: #0A1626;
-    background-color: #b4c6eb;
+    color: #fff;
+    width: 100%;
+    background-color: #132133;
     padding: 8px 16px;
     border-radius: 4px;
 }
@@ -111,13 +140,14 @@ hr {
 
 .task .progress.done + .task-description {
     text-decoration: line-through;
-    color: #0a162660;
+    color: #fff;
+    opacity: 0.5;
 
 }
 
 .task .task-description {
     font-size: 16px;
-    color: #0A1626;
+    color: #fff;
     padding: 4px 0;
     width: 100%;
 }
@@ -125,6 +155,7 @@ hr {
 .task .task-actions {
     display: flex;
     gap: 10px;
+    margin-left: 8px;
 }
 
 .action-buton {
@@ -132,7 +163,7 @@ hr {
 }
 
 .action-button.edit-button {
-    color: #0A1626;
+    color: #7a97bd;
 }
 
 .action-button.delete-button {
@@ -146,7 +177,44 @@ hr {
 /* Responsividade */
 @media screen and (max-width: 600px) {
     #to_do {
-        width: 300px;
+        flex-direction: column;
+        width: 380px;
         border: 20px;
+        margin: 16px;
+    }
+
+    #to-do-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 16px;
+        width: 100%;
+        background-color: #ec154b;
+        padding: 16px;
+        border-radius: 8px 8px 0px 0px;
+    }
+
+    .task {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        width: 100%;
+        background-color: #132133;
+        padding: 12px;
+        border-radius: 4px;
+    }
+
+    #tasks {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        padding: 16px;
+        max-height: auto;
     }
 }
